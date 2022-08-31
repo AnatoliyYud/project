@@ -1,8 +1,12 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const { port, host, db } = require("./configuration");
 const { connectDb } = require("./helpers/db");
 
 const app = express();
+const postSchema = new mongoose.Schema({
+  name: String
+const Post = mongoose.model("Post", postSchema);
 
 const startServer = () => {
   app.listen(port, () => {
