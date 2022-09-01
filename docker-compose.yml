@@ -3,6 +3,7 @@ version: '3'
 services:
   api:
     build: ./api
+    container_name: project-api
     command: npm run start
     restart: unless-stopped
     ports:
@@ -17,6 +18,7 @@ services:
 
   api_db:
     image: mongo:latest
+    container_name: project-api-db
     volumes:
       - mongodb_api:/data/db
 
